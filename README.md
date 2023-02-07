@@ -71,8 +71,6 @@ $ git clone https://github.com/------/AirBnB_clone.git
 |[help](./console.py)| Prints information about specific command |
 |[quit/ EOF](./console.py)| Exit the program |
 
-```
-
 
 ## Built with :gear:
 python3 (3.4.3)
