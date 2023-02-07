@@ -1,4 +1,4 @@
-# AirBnB Clone (./image/hbnb_logo.png)
+# AirBnB Clone
 
 
 ### Contents
