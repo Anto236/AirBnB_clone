@@ -52,4 +52,3 @@ class TestCity(unittest.TestCase):
         """Checks to make sure City inherits from BaseModel"""
 
         self.assertTrue(issubclass(City, BaseModel))
-
