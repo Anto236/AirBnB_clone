@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""Importing storage variable"""
-
+"""Module creates storage variable"""
 from models.engine.file_storage import FileStorage
 
 

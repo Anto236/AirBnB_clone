@@ -1,13 +1,15 @@
 #!/usr/bin/python3
-"""class City which inherits from BaseModel"""
+"""Holds User class that inherits from BaseModel"""
 from models.base_model import BaseModel
 
 
 class City(BaseModel):
-    """defines class City
+    """Initializes the City class
+
     Attributes:
-        state_id (str) - dtate.id
-        name (str) - name of str
+        state_id (str) - Refers to the State.id
+        name (str) - The name of the city
     """
+
     state_id = ""
     name = ""
