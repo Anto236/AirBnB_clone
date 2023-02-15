@@ -1,57 +1,51 @@
 #!/usr/bin/python3
-"""Module that holds class BaseModel"""
+""" module to manage attributes for future classes for AirBnb clone """
+
+
+import datetime
 import uuid
-from datetime import datetime
 import models
 
 
 class BaseModel:
-    """Base class"""
+    """ the base class for all other classes in this project """
+    id = 0
 
     def __init__(self, *args, **kwargs):
-        """Initializes attributes for class BaseModel
-        Args:
-            id - identification number
-            *args - arguments (not used)
-            **kwargs - dictionary arguments
-        """
-
-        if kwargs and kwargs != {}:
-            for k, v in kwargs.items():
-                if k == "created_at" or k == "updated_at":
-                    setattr(self, k, datetime.strptime(v,
-                                                       "%Y-%m-%dT%H:%M:%S.%f"))
-                elif k == "__class__":
+        """ initializes base class with a unique id """
+        if (kwargs):
+            for key, value in kwargs.items():
+                if key == 'created_at':
+                    self.created_at = datetime.datetime.\
+                                      strptime(value, '%Y-%m-%dT%H:%M:%S.%f')
                     continue
-                else:
-                    setattr(self, k, v)
+                if key == 'updated_at':
+                    self.updated_at = datetime.datetime.\
+                                      strptime(value, '%Y-%m-%dT%H:%M:%S.%f')
+                    continue
+                if key == '__class__':
+                    continue
+                setattr(self, key, value)
         else:
             self.id = str(uuid.uuid4())
-            self.created_at = datetime.now()
-            self.updated_at = datetime.now()
+            self.created_at = datetime.datetime.now()
+            self.updated_at = self.created_at
             models.storage.new(self)
 
     def __str__(self):
-        """Returns a formated string of classname, id, and dictionary
-        contens
-        """
-
-        return ("[{}] ({}) {}".format(self.__class__.__name__,
-                                      self.id, self.__dict__))
+        """ prints name, id, and dict """
+        return ("[{}] ({}) {}".format(self.__class__.__name__, self.id,
+                                      self.__dict__))
 
     def save(self):
-        """Saves any new information added to a class instance and
-        saves an update time
-        """
-
-        self.updated_at = datetime.now()
+        """ updates the public instance attribute with the current datetime """
+        self.updated_at = datetime.datetime.now()
         models.storage.save()
 
     def to_dict(self):
-        """Returns a dictionary of all the contens of a class instance"""
-
-        d = self.__dict__.copy()
-        d['__class__'] = self.__class__.__name__
-        d['created_at'] = self.created_at.isoformat()
-        d['updated_at'] = self.updated_at.isoformat()
-        return d
+        """ returns a dict containing all keys/values of __dict__ """
+        new_dict = self.__dict__.copy()
+        new_dict['__class__'] = self.__class__.__name__
+        new_dict['created_at'] = self.created_at.isoformat()
+        new_dict['updated_at'] = self.updated_at.isoformat()
+        return new_dict
