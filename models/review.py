@@ -1,17 +1,24 @@
 #!/usr/bin/python3
-"""Holds User class that inherits from BaseModel"""
+
+"""Subclass Place that inherits from BaseModel"""
+
 from models.base_model import BaseModel
+from models.city import City
+from models.user import User
+from models.amenity import Amenity
 
 
-class Review(BaseModel):
-    """Initalizes Review class
+class Place(BaseModel):
+    """Subclass of BaseModel"""
 
-    Attributes:
-        place_id (str) - Refers to the Place.id
-        user_id (str) - Refers to the User.id
-        text (str) - The content of the review
-    """
-
-    place_id = ""
+    city_id = ""
     user_id = ""
-    text = ""
+    name = ""
+    description = ""
+    number_rooms = 0
+    number_bathrooms = 0
+    max_guest = 0
+    price_by_night = 0
+    latitude = 0.0
+    longitude = 0.0
+    amenity_ids = []

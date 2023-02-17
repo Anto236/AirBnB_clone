@@ -1,24 +1,15 @@
 #!/usr/bin/python3
-"""Holds User class that inherits from BaseModel"""
+
+"""Subclass Place that inherits from BaseModel"""
+
 from models.base_model import BaseModel
+from models.city import City
+from models.user import User
+from models.amenity import Amenity
 
 
 class Place(BaseModel):
-    """Initializes the Place class
-
-    Attributes:
-        city_id (str) - Refers to the City.id
-        user_id (str) - Refers to the User.id
-        name (str) - The name of the place
-        description (str) - A description of the place
-        number_rooms (int) - The number of rooms
-        number_bathrooms (int) - The number of bathrooms
-        max_guest (int) - The maximum number of guests allowed
-        price_by_night (int) - The cost of a night
-        latitude (float) - The latitude location of the place
-        longitude (float) - The longitude location of the place
-        amenity_ids (list of str) - List of Amenity.id
-    """
+    """Subclass of BaseModel"""
 
     city_id = ""
     user_id = ""
