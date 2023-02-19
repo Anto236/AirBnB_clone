@@ -245,5 +245,6 @@ class HBNBCommand(cmd.Cmd):
             updatedict = ast.literal_eval(dstr)
             return (updatedict)
 
+
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
