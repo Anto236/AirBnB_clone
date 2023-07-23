@@ -18,7 +18,7 @@ For this project, we expect you to look at these concepts:
 [AirBnB clone](https://intranet.alxswe.com/concepts/74)
 
 
-[](https://i.pinimg.com/564x/3e/fe/c1/3efec169bdcefc975fd8a76660b89bb7.jpg)
+[](https://drive.google.com/file/d/107bwGZH8Wjq6OrISQRvEggNPYZK1S6dm/view?usp=drive_link)
 
 # Background Context
 
