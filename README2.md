@@ -180,4 +180,4 @@ $
 
 All tests should also pass in non-interactive mode: `$ echo "python3 -m unittest discover tests" | bash`
 
-![](
+![](https://camo.githubusercontent.com/5a21d91ad4ed61dcc6478878cd9328593c67ae083bdd9fd065b8052d1d428ffc/68747470733a2f2f692e696d6775722e636f6d2f525536376630362e706e67)
